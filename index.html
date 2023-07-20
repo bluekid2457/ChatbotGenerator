@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="main.js" defer></script>
+<div class="sign-up">
+    <input id = "uname" type="text" [(ngModel)]="username" name="username"  placeholder="username">
+    
+    <input id = "pass" type="password"[(ngModel)]="password" name="password" placeholder="password">
+    <!-- <span id="send-btn">send</span> -->
+    <button onclick= "createAccount();" > Sign Up </button>
+  </div>
+<p id = "Sign-up-button"> Sample Text</p>
+
+<div class="sign-in">
+    <input id = "L-uname" type="text" [(ngModel)]="username" name="username"  placeholder="username">
+    
+    <input id = "L-pass" type="password"[(ngModel)]="password" name="password" placeholder="password">
+    <!-- <span id="send-btn">send</span> -->
+    <button onclick="signIn();" > Sign In </button>
+  </div>
+<p id = "Sign-in-button"> Sign in here ^^^</p>
+
+</body>
+</html>
