@@ -3,7 +3,9 @@
 
 // const sendChatBtn = document.querySelector(".chat-input span");
 // const sendChatBtn = document.getElementById("send-btn")
-
+console.log(window.location.href);
+// if (window.location.href) 
+// localStorage.setItem("link",);
 const API_URL_create = "https://mcfss60826.execute-api.us-west-2.amazonaws.com/default/CreateAccountChatbotGenerator" //?uname=test4&password=998
 const createAccount = () => {
     localStorage.clear();
@@ -56,7 +58,7 @@ const signIn = () => {
     setTimeout(function(){
         alert("5 seconds have passed."); //ad other code in here
         if (!error){
-            window.location.href = window.location.href+"/chatbots.html"; //change to actual domain
+            window.location.href = localStorage.getItem("link")+"/chatbots.html"; //change to actual domain
         }
       }, 5000);
     console.log("DONE");
