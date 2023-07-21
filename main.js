@@ -56,7 +56,7 @@ const signIn = () => {
     setTimeout(function(){
         alert("5 seconds have passed."); //ad other code in here
         if (!error){
-            window.location.href = "/chatbots.html"; //change to actual domain
+            window.location.href = window.location.href+"/chatbots.html"; //change to actual domain
         }
       }, 5000);
     console.log("DONE");
