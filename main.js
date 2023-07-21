@@ -3,8 +3,10 @@
 
 // const sendChatBtn = document.querySelector(".chat-input span");
 // const sendChatBtn = document.getElementById("send-btn")
+
 const API_URL_create = "https://mcfss60826.execute-api.us-west-2.amazonaws.com/default/CreateAccountChatbotGenerator" //?uname=test4&password=998
 const createAccount = () => {
+    localStorage.clear();
     username = document.getElementById("uname");
     username = username.value;
     password = document.getElementById("pass");
@@ -23,6 +25,7 @@ const createAccount = () => {
 }
 const API_URL_login = "https://95z6jwzqnh.execute-api.us-west-2.amazonaws.com/default/validatelogin"
 const signIn = () => {
+    localStorage.clear();
     username = document.getElementById("L-uname");
     username = username.value;
     password = document.getElementById("L-pass");
@@ -41,7 +44,7 @@ const signIn = () => {
             console.log("No error,"+ data);
             error=false;
         }
-        domain = data.slice(2,-2);
+        domain = data.slice(1,-1);
         console.log(domain)
     }).catch(() => {
         console.log("ERROR sign in issue");
