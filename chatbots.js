@@ -5,5 +5,5 @@ console.log(localStorage.getItem("domain"));
 text.innerHTML = localStorage.getItem("domain");
 
 const navCreate = () => {
-    window.location="/create.html"
+    window.location= window.location.href+"/create.html";
 }
