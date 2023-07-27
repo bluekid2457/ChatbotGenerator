@@ -1,8 +1,36 @@
 
 domainField = document.getElementById("input_domain");
 domainField.value = localStorage.domain;
+console.log(domainField.value.length);
+console.log(typeof(localStorage.domain))
+if (domainField.value.length == 0){
+    domainField.disabled = false;
+    domainField.style.visibility = 'visible';
+}
+else{
+    // alert("Empty");
+    document.getElementById("sampledata").style.display="none";
+    // document.getElementById("sampledata").style.visibility = 'hidden';
+    domainField.disabled = true;
+    domainField.style.display="none";
+    domain_text = document.getElementById("Domain_text");
+    domain_text.innerHTML = "Your domain is " + localStorage.domain;
+}
 const API_URL_domain = "https://fhdm27kb9i.execute-api.us-west-2.amazonaws.com/default/addDomain"
 const API_URL_info = "https://oxjw49ppec.execute-api.us-west-2.amazonaws.com/default/changeInfo"
+
+fetch(API_URL_info+"?domain="+localStorage.domain).then(res => res.text()).then(data => {
+    in_field = document.getElementById("input_info");
+    if (data.slice(1,-1) == '"message":"Internal Server Error"'){
+        data = "";
+    }
+    in_field.value = data.slice(1,-1);
+}).catch(() => {
+    in_field = document.getElementById("input_info");
+    in_field.value = "some error";
+})    
+// infoField = document.getElementById("input_info");
+// infoField.value = localStorage.info;
 
 const createBot = () => {
     console.log("Creating...");
@@ -11,6 +39,7 @@ const createBot = () => {
 }
 
 const addDomain = () => {
+    alert("adding");
     domain = document.getElementById("input_domain").value;
     username = localStorage.getItem("username");
     console.log(domain+": domain")
@@ -33,7 +62,7 @@ const addInfo = () => {
     console.log(domain+": domain")
     console.log(username);
     fetch(API_URL_info+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
-        text = document.getElementById("sampledata2");
+        text = document.getElementById("sampledata3");
         text.innerHTML = "info {"+info+"} added to {"+domain+"}";
     }).catch(() => {
         text = document.getElementById("sampledata");
