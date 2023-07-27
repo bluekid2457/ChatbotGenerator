@@ -9,6 +9,7 @@ localStorage.clear();
 console.log(window.location.href);
 console.log(window.location.href.substring(0,window.location.href.lastIndexOf('/')+1))
 localStorage.setItem("links", window.location.href.substring(0,window.location.href.lastIndexOf('/')+1));
+console.log(localStorage.getItem("links"));
 // if (window.location.href.includes("127.0.0.1")){
     
 // }
