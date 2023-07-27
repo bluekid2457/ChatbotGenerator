@@ -46,12 +46,19 @@ const createAccount = () => {
         uname: username,
         password: password
     })
-    }).then(data => {
-        
-                console.log("Account {"+username+"} created");
-                text = document.getElementById("Sign-up-button");
-                text.value = "Account {"+username+"} created";
-                document.getElementById("reg-log").checked = false;
+    }).then(res => res.text()).then(data => {
+                if (data == "Username Taken"){
+                    console.log("Account {"+username+"} Taken");
+                    text = document.getElementById("Sign-up-button");
+                    text.value = "Account {"+username+"} Taken";
+                    alert("Account {"+username+"} Taken");
+                }
+                else{
+                    console.log("Account {"+username+"} created");
+                    text = document.getElementById("Sign-up-button");
+                    text.value = "Account {"+username+"} created";
+                    document.getElementById("reg-log").checked = false;
+                }
             }).catch(() => {
                 text = document.getElementById("Sign-up-button");
                 text.innerHTML = "Account not created";

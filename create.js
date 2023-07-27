@@ -39,7 +39,7 @@ const createBot = () => {
 }
 
 const addDomain = () => {
-    alert("adding");
+    // alert("adding");
     domain = document.getElementById("input_domain").value;
     username = localStorage.getItem("username");
     console.log(domain+": domain")
