@@ -45,9 +45,17 @@ const addDomain = () => {
     console.log(domain+": domain")
     console.log(username);
     fetch(API_URL_domain+"?uname="+username+"&domain="+domain).then(res => res.text()).then(data => {
-        text = document.getElementById("sampledata");
-        text.innerHTML = "domain {"+domain+"} added";
-        localStorage.setItem("domain",domain);
+        console.log(data);
+        if (data.includes("Domain Taken")){
+            console.log("domain {"+domain+"} is Taken");
+            text = document.getElementById("sampledata");
+            text.innerHTML = "domain {"+domain+"} is Taken";
+        }
+        else{
+            text = document.getElementById("sampledata");
+            text.innerHTML = "domain {"+domain+"} added";
+            localStorage.setItem("domain",domain);
+        }
     }).catch(() => {
         text = document.getElementById("sampledata");
         text.innerHTML = "domain ERROR";
