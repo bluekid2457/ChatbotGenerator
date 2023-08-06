@@ -67,28 +67,34 @@ const addInfo = () => {
     username = localStorage.getItem("username");
     domain = localStorage.getItem("domain");
     info = document.getElementById("input_info").value;
-    info = info.replaceAll("&","and");
+    // info = info.replaceAll("&","and");
     console.log(domain+": domain");
     console.log("info :" + info);
-    
-    fetch(API_URL_info, {
-        method: "post",
-        // headers: {
-        //     'Accept': 'application/json',
-        //     'Content-Type': 'application/json'
-        // },
-        //make sure to serialize your JSON body
-        body: JSON.stringify({
-            info: info,
-            domain: domain
-        })
-        }).then(res => res.text()).then(data => {
-            text = document.getElementById("sampledata3");
-            text.innerHTML = "info {"+info+"} added to {"+domain+"}";
-        }).catch(() => {
-            text = document.getElementById("sampledata");
-            text.innerHTML = "domain ERROR";
+    fetch(API_URL_domain+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
+        text = document.getElementById("sampledata3");
+        text.innerHTML = "info {"+info+"} added to {"+domain+"}";
+    }).catch(() => {
+        text = document.getElementById("sampledata");
+        text.innerHTML = "domain ERROR";
     })    
+    //     fetch(API_URL_info, {
+    //     method: "post",
+    //     // headers: {
+    //     //     'Accept': 'application/json',
+    //     //     'Content-Type': 'application/json'
+    //     // },
+    //     //make sure to serialize your JSON body
+    //     body: JSON.stringify({
+    //         info: info,
+    //         domain: domain
+    //     })
+    //     }).then(res => res.text()).then(data => {
+    //         text = document.getElementById("sampledata3");
+    //         text.innerHTML = "info {"+info+"} added to {"+domain+"}";
+    //     }).catch(() => {
+    //         text = document.getElementById("sampledata");
+    //         text.innerHTML = "domain ERROR";
+    // })    
 //     fetch(API_URL_info+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
 //         text = document.getElementById("sampledata3");
 //         text.innerHTML = "info {"+info+"} added to {"+domain+"}";
