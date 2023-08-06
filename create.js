@@ -70,7 +70,7 @@ const addInfo = () => {
     // info = info.replaceAll("&","and");
     console.log(domain+": domain");
     console.log("info :" + info);
-    fetch(API_URL_domain+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
+    fetch(API_URL_info+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
         text = document.getElementById("sampledata3");
         text.innerHTML = "info {"+info+"} added to {"+domain+"}";
     }).catch(() => {
