@@ -1,5 +1,7 @@
 const chatbotTest = () => {
+
     domain = localStorage.getItem("domain");
+    // domain = "test.com"
     message = document.getElementById("chat_input").value
     console.log(domain+": domain")
     // console.log(username);
