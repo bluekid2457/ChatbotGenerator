@@ -67,7 +67,7 @@ const addInfo = () => {
     username = localStorage.getItem("username");
     domain = localStorage.getItem("domain");
     info = document.getElementById("input_info").value;
-    info = info.replaceAll("&",/%26/g);
+    info = info.replaceAll("&","and");
     console.log(domain+": domain");
     console.log("info :" + info);
     
