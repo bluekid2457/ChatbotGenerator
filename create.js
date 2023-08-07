@@ -68,6 +68,7 @@ const addInfo = () => {
     domain = localStorage.getItem("domain");
     info = document.getElementById("input_info").value;
     info = info.replaceAll("&","%26");
+    info = info.replaceAll("=","%3D");
     console.log(domain+": domain");
     console.log("info :" + info);
     fetch(API_URL_info+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
