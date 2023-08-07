@@ -67,7 +67,7 @@ const addInfo = () => {
     username = localStorage.getItem("username");
     domain = localStorage.getItem("domain");
     info = document.getElementById("input_info").value;
-    // info = info.replaceAll("&","and");
+    info = info.replaceAll("&","and");
     console.log(domain+": domain");
     console.log("info :" + info);
     fetch(API_URL_info+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
