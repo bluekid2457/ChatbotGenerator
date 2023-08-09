@@ -67,11 +67,12 @@ const addInfo = () => {
     username = localStorage.getItem("username");
     domain = localStorage.getItem("domain");
     info = document.getElementById("input_info").value;
+    email = document.getElementById("input_email").value;
     info = info.replaceAll("&","%26");
     info = info.replaceAll("=","%3D");
     console.log(domain+": domain");
     console.log("info :" + info);
-    fetch(API_URL_info+"?info="+info+"&domain="+domain).then(res => res.text()).then(data => {
+    fetch(API_URL_info+"?info="+info+"&domain="+domain+"&email="+email).then(res => res.text()).then(data => {
         text = document.getElementById("sampledata3");
         text.innerHTML = "info {"+info+"} added to {"+domain+"}";
     }).catch(() => {
