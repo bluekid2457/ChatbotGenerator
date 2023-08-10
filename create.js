@@ -75,7 +75,9 @@ const addInfo = () => {
     console.log("info :" + info);
     fetch(API_URL_info+"?info="+info+"&domain="+domain+"&email="+email).then(res => res.text()).then(data => {
         text = document.getElementById("sampledata3");
-        text.innerHTML = "info {"+info+"} added to {"+domain+"}";
+        if (domain != ""){
+            text.innerHTML = "info {"+info+"} added to {"+domain+"}";
+        }
     }).catch(() => {
         text = document.getElementById("sampledata");
         text.innerHTML = "domain ERROR";
