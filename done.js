@@ -1,3 +1,8 @@
+
+
+te = document.getElementById("h");
+te.innerText = "HELLO"; //change to Name of chatbot
+
 const chatbotTest = () => {
 
     domain = localStorage.getItem("domain");

@@ -24,7 +24,8 @@ fetch(API_URL_info+"?domain="+localStorage.domain).then(res => res.text()).then(
     if (data.slice(1,-1) == '"message":"Internal Server Error"'){
         data = "";
     }
-    in_field.value = data.slice(1,-1);
+    in_field.value = data.split('"')[1];
+
 }).catch(() => {
     in_field = document.getElementById("input_info");
     in_field.value = "some error";
