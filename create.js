@@ -1,8 +1,9 @@
 
 domainField = document.getElementById("input_domain");
 domainField.value = localStorage.domain;
-console.log(domainField.value.length);
-console.log(typeof(localStorage.domain))
+console.log("Updated");
+// console.log(domainField.value.length);
+// console.log(typeof(localStorage.domain))
 if (domainField.value.length == 0){
     domainField.disabled = false;
     domainField.style.visibility = 'visible';
@@ -107,4 +108,9 @@ const addInfo = () => {
 //         text = document.getElementById("sampledata");
 //         text.innerHTML = "domain ERROR";
 // })    
+}
+
+const scrapeWeb = () => {
+
+
 }

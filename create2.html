@@ -2,21 +2,33 @@
     
 <link rel="stylesheet" href="create2.css">
 <script src="create.js" defer></script>
-    <div class="left">
-      <div class="header">
-        <h2 class="animation a1">Welcome Back</h2>
-        <h4 class="animation a2" id = "Domain_text">First Add the Domain, then add the Information</h4>
+  <div class="left">
+    <div class="header">
+      <h2 class="animation a1">Welcome Back</h2>
+      <h4 class="animation a2" id = "Domain_text">First Add the Domain, then add the Information</h4>
+    </div>
+    <div class="form">
+      <input  class="form-field animation a3" placeholder="Domain" id = "input_domain">
+      <button class="animation a6" id = "sampledata" onclick="addDomain()">Add Domain</button>
+      <input  class="form-field animation a3" placeholder="Contact Email" id = "input_email">
+      <textarea id = "input_info" type="password" class="form-field animation a4" placeholder="Enter Info here" style="height: 500px;"></textarea>
+      <p class="animation a5"><a href="#" id = "sampledata3">Forgot Password</a></p>
+      <button class="animation a6" id = "sampledata2" onclick="addInfo()">Add Information</button>
+      <button class="animation a6" onclick="window.open('https://bluekid2457.github.io/ChatbotGenerator/done.html');">Go to Testing</button>
+    </div>
+  </div>
+  <div class="right">
+    <div style="margin: 20px; background-color: white; border-radius: 20px;">
+      <div class="header" style="margin-top: 80px; margin-left: 20px; padding: 20px;">
+        <h2 class="animation a1" >Welcome Back</h2>
+        <h4 class="animation a2" id = "Domain_text">Add your Information</h4>
       </div>
-      <div class="form">
-        <input  class="form-field animation a3" placeholder="Domain" id = "input_domain">
-        <button class="animation a6" id = "sampledata" onclick="addDomain()">Add Domain</button>
-        <input  class="form-field animation a3" placeholder="Contact Email" id = "input_email">
+      <div class="form" style="padding: 20px;">
+        <input  class="form-field animation a3" placeholder="Add links" id = "input_email">
         <textarea id = "input_info" type="password" class="form-field animation a4" placeholder="Enter Info here" style="height: 500px;"></textarea>
         <p class="animation a5"><a href="#" id = "sampledata3">Forgot Password</a></p>
-        <button class="animation a6" id = "sampledata2" onclick="addInfo()">Add Information</button>
-        <button class="animation a6" onclick="window.open('https://bluekid2457.github.io/ChatbotGenerator/done.html');">Go to Testing</button>
+        <button class="animation a6" id = "sampledata2" onclick="scrapeWeb()">Scrape</button>
       </div>
     </div>
-    <div class="right"></div>
   </div>
-  
+</div>
